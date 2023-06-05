@@ -1,0 +1,4 @@
+C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\Debug\FilmIncelemeMvcProject.csproj.AssemblyReference.cache
+C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\Debug\FilmIncelemeMvcProject.Migrations.mig1.resources
+C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\Debug\FilmIncelemeMvcProject.csproj.GenerateResource.cache
+C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\Debug\FilmIncelemeMvcProject.csproj.CoreCompileInputs.cache
