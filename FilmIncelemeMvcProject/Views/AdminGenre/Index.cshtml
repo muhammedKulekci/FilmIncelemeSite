@@ -1,0 +1,33 @@
+﻿@using EntityLayer.Concrete
+@model List<Genre>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<table class="table table-bo">
+    <tr>
+        <th>#</th>
+        <th>Kategori</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>İçerik</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.GenreId</th>
+            <td>@item.GenreName</td>            
+            <td><a href="/AdminGenre/DeleteGenre/@item.GenreId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/AdminGenre/EditGenre/@item.GenreId" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/AdminMovie/GetMovieByGenreId/@item.GenreId" class="btn btn-primary">İçeirk</a></td>
+        </tr>
+
+    }
+
+</table>
+<br />
+<a href="/AdminGenre/AddGenre" class="btn btn-info">Yeni Kategori</a><br /><br /><br />
+

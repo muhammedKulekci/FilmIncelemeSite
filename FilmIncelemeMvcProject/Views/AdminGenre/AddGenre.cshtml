@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.Genre
+@{
+    ViewBag.Title = "AddGenre";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddGenre", "AdminGenre", FormMethod.Post))
+{
+    <br />
+    <br />
+    <h2>Kategori Ekle</h2><br />
+                          <div class="form-group">
+                              
+                              <label for="GenreName" class="form-label">Kategori Adı</label>
+                              <input type="text" class="form-control" id="GenreName" name="GenreName">
+                              <span class="text-danger">@(Html.ValidationMessageFor(x => x.GenreName))</span>
+
+                              <br /><br />
+                              <button class="btn btn-success">Kaydet</button>
+                          </div>
+
+}
+

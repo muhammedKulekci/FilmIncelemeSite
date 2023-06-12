@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concrete.Movie
+@{
+    ViewBag.Title = "AddMovie";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<h2>Film Ekle</h2>
+<br />
+@using (Html.BeginForm("AddMovie", "AdminMovie", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="GenreName" class="form-label">Movie Name</label>
+        <input type="text" class="form-control" id="MovieName" name="MovieName">
+        <label for="GenreName" class="form-label">Director</label>
+        <input type="text" class="form-control" id="Director" name="Director">
+        <label for="GenreName" class="form-label">Writer</label>
+        <input type="text" class="form-control" id="Writer" name="Writer">
+        <label for="GenreName" class="form-label">Year</label>
+        <input type="number" class="form-control" id="Year" name="Year">
+        <label for="GenreName" class="form-label">Description</label>
+        <input type="text" class="form-control" id="Description" name="Description">
+
+        <label for="Image" class="form-label">İmage</label>
+        <input type="text" class="form-control" id="Image" name="Image">
+        <label for="Trailer" class="form-label">Trailer</label>
+        <input type="text" class="form-control" id="Trailer" name="Trailer">
+
+        <label for="GenreName" class="form-label">Genre</label>
+        @Html.DropDownListFor(x => x.GenreId, (List<SelectListItem>)ViewBag.vlg, new { @class = "form-control" })
+        <br /><br />
+        <button class="btn btn-success">Save</button>
+    </div>
+}
+

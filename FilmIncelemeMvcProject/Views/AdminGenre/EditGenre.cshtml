@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concrete.Genre
+@{
+    ViewBag.Title = "EditGenre";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Kategori Güncelle</h2>
+@using (Html.BeginForm("EditGenre", "AdminGenre", FormMethod.Post))
+{
+    <br />
+    <div class="form-group">
+        <label for="GenreId" class="form-label">Genre ID</label>
+        @(Html.TextBoxFor(x => x.GenreId, new { @class = "form-control", id = "GenreId"}))
+        <label for="GenreName" class="form-label">Kategori Adı</label>
+        @(Html.TextBoxFor(x => x.GenreName, new { @class = "form-control", id = "GenreName" }))
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.GenreName))</span>
+        <br /><br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+
+}
+

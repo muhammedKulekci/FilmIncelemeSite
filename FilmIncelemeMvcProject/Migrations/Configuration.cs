@@ -1,20 +1,18 @@
 ﻿namespace FilmIncelemeMvcProject.Migrations
-
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-
-    internal sealed class Configuration : DbMigrationsConfiguration<DataAccessLayer.Concrete.DataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<FilmIncelemeMvcProject.DataAccessLayer.Concrete.Context>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(DataAccessLayer.Concrete.DataContext context)
+        protected override void Seed(FilmIncelemeMvcProject.DataAccessLayer.Concrete.Context context)
         {
             //  This method will be called after migrating to the latest version.
 

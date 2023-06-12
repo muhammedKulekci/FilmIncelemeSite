@@ -1,0 +1,20 @@
+﻿namespace FilmIncelemeMvcProject.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class mig2 : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Comments", "DateTime", c => c.DateTime(nullable: false));
+            DropColumn("dbo.Comments", "Rating");
+        }
+        
+        public override void Down()
+        {
+            AddColumn("dbo.Comments", "Rating", c => c.Int(nullable: false));
+            DropColumn("dbo.Comments", "DateTime");
+        }
+    }
+}

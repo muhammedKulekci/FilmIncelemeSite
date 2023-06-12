@@ -1,0 +1,44 @@
+﻿@model EntityLayer.Concrete.Movie
+@{
+    ViewBag.Title = "UpdateMovie";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<br />
+<h2>Film Ekle</h2>
+<br />
+@using (Html.BeginForm("UpdateMovie", "AdminMovie", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="MovieId" class="form-label">Movie ID</label>
+        @Html.TextBoxFor(x => x.MovieId, new { @class = "form-control" })
+        <label for="MovieName" class="form-label">Movie Name</label>
+        @Html.TextBoxFor(x => x.MovieName, new { @class = "form-control" })
+        <br />
+        <label for="Director" class="form-label">Director</label>
+        @Html.TextBoxFor(x => x.Director, new { @class = "form-control" })
+        <label for="Writer" class="form-label">Writer</label>
+        @Html.TextBoxFor(x => x.Writer, new { @class = "form-control" })
+        <label for="Year" class="form-label">Year</label>
+        @Html.TextBoxFor(x => x.Year, new { @class = "form-control" })
+        <label for="Description" class="form-label">Description</label>
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+        <label for="Image" class="form-label">İmage</label>
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+        <label for="Trailer" class="form-label">Trailer</label>
+        @Html.TextBoxFor(x => x.Trailer, new { @class = "form-control" })
+        <label for="IsDelete" class="form-label">IsDelete</label>
+        @Html.TextBoxFor(x => x.IsDelete, new { @class = "form-control" })
+        <label for="IsStatus" class="form-label">IsStatus</label>
+        @Html.TextBoxFor(x => x.IsStatus, new { @class = "form-control" })
+
+
+
+        <label for="GenreName" class="form-label">Genre</label>
+        @Html.DropDownListFor(x => x.GenreId, (List<SelectListItem>)ViewBag.vlg, new { @class = "form-control" })
+        <br /><br />
+        <button class="btn btn-success">Save</button>
+    </div>
+}
+

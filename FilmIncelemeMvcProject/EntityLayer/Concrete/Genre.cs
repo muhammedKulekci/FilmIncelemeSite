@@ -13,7 +13,7 @@ namespace EntityLayer.Concrete
         [StringLength(50)]
         public string GenreName { get; set; }
         public ICollection<Movie> Movies { get; set; }
-        public bool IsStatus { get; set; }
+        public bool IsStatus { get; set; } = true;
         public bool IsDelete { get; set; }
     }
 }

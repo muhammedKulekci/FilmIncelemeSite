@@ -19,7 +19,7 @@ namespace EntityLayer.Concrete
         [StringLength (300)]
         public string Image { get; set; }
         public ICollection<Comment> Comments { get; set; }
-        public bool IsStatus { get; set; }
+        public bool IsStatus { get; set; } = true;
         public bool IsDeleted { get; set; }
 
     }
