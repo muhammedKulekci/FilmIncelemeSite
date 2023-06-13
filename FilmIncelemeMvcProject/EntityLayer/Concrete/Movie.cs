@@ -16,8 +16,9 @@ namespace EntityLayer.Concrete
         public string Director { get; set; }
         [StringLength(100)]
         public string Writer { get; set; }
-        [StringLength(500)]
+        [StringLength(1000)]
         public string Image { get; set; }
+        [StringLength(1000)]
         public string Trailer { get; set; }        
         public int Year { get; set; }
         [StringLength(1000)]

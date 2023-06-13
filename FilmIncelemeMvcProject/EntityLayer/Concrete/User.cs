@@ -16,8 +16,10 @@ namespace EntityLayer.Concrete
         public string Password { get; set; }
         [StringLength(100)]
         public string Email { get; set; }
-        [StringLength (300)]
+        [StringLength (1000)]
         public string Image { get; set; }
+        [StringLength(1)]
+        public string Role { get; set; } = "B";
         public ICollection<Comment> Comments { get; set; }
         public bool IsStatus { get; set; } = true;
         public bool IsDeleted { get; set; }

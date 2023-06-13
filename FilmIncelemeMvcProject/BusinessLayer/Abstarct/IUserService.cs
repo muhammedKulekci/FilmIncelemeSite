@@ -14,5 +14,6 @@ namespace FilmIncelemeMvcProject.BusinessLayer.Abstarct
         void UserDelete(User user);
         void UserUpdate(User user);
         User GetById(int id);
+        User GetUser(User user);
     }
 }

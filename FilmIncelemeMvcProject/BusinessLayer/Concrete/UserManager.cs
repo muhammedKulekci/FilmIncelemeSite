@@ -27,6 +27,11 @@ namespace FilmIncelemeMvcProject.BusinessLayer.Concrete
             return _UserDal.List(x => x.IsStatus == true);
         }
 
+        public User GetUser(User user)
+        {
+            return _UserDal.Get(x=>x.Email== user.Email && x.Password == user.Password);
+        }
+
         public void UserAdd(User user)
         {
             _UserDal.Insert(user);

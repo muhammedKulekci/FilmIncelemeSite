@@ -14,6 +14,7 @@ namespace FilmIncelemeMvcProject.Controllers
     public class AdminGenreController : Controller
     {
         GenreManager gm =new GenreManager(new EFGenreDal());
+        
         public ActionResult Index()
         {
             var genrevalues = gm.GetList();
