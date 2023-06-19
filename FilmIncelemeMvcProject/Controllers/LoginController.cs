@@ -28,7 +28,8 @@ namespace FilmIncelemeMvcProject.Controllers
             {
                 FormsAuthentication.SetAuthCookie(p.Email, false);
                 Session["Email"] = p.Email;
-                return RedirectToAction("Index", "AdminMovie");
+                ViewBag.name = "MemedAli";
+                return RedirectToAction("Index", "AdminMovie",new {ViewBag.name});
             }
             else 
             { 
@@ -46,6 +47,14 @@ namespace FilmIncelemeMvcProject.Controllers
         {
             um.UserAdd(p);
             return RedirectToAction("index");
+        }
+        public ActionResult Logout()
+        {
+            
+            Session.Clear();
+
+            
+            return RedirectToAction("Index");
         }
     }
 }

@@ -139,20 +139,25 @@
     <Compile Include="BusinessLayer\Abstarct\ICommentService.cs" />
     <Compile Include="BusinessLayer\Abstarct\IGenreService.cs" />
     <Compile Include="BusinessLayer\Abstarct\IMovieService.cs" />
+    <Compile Include="BusinessLayer\Abstarct\IRatingService.cs" />
     <Compile Include="BusinessLayer\Abstarct\IUserService.cs" />
     <Compile Include="BusinessLayer\Concrete\CommentManager.cs" />
     <Compile Include="BusinessLayer\Concrete\GenreManager.cs" />
     <Compile Include="BusinessLayer\Concrete\MovieManager.cs" />
+    <Compile Include="BusinessLayer\Concrete\RatingManager.cs" />
     <Compile Include="BusinessLayer\Concrete\UserManager.cs" />
     <Compile Include="BusinessLayer\ValidationRules\GenreValidator.cs" />
     <Compile Include="Controllers\AdminGenreController.cs" />
     <Compile Include="Controllers\AdminMovieController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RatingController.cs" />
     <Compile Include="DataAccessLayer\Abstract\ICommentDal.cs" />
     <Compile Include="DataAccessLayer\Abstract\IGenreDal.cs" />
     <Compile Include="DataAccessLayer\Abstract\IMovieDal.cs" />
+    <Compile Include="DataAccessLayer\Abstract\IRatingDal.cs" />
     <Compile Include="DataAccessLayer\Abstract\IRepository.cs" />
     <Compile Include="DataAccessLayer\Abstract\IUserDal.cs" />
     <Compile Include="DataAccessLayer\Concrete\Context.cs" />
@@ -160,14 +165,17 @@
     <Compile Include="DataAccessLayer\Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="DataAccessLayer\Concrete\Repositories\GenreRepository.cs" />
     <Compile Include="DataAccessLayer\Concrete\Repositories\MovieRepository.cs" />
+    <Compile Include="DataAccessLayer\Concrete\Repositories\RatingRepository.cs" />
     <Compile Include="DataAccessLayer\Concrete\Repositories\UserRepository.cs" />
     <Compile Include="DataAccessLayer\EntityFramework\EFCommentDal.cs" />
     <Compile Include="DataAccessLayer\EntityFramework\EFGenreDal.cs" />
     <Compile Include="DataAccessLayer\EntityFramework\EFMovieDal.cs" />
+    <Compile Include="DataAccessLayer\EntityFramework\EFRatingDal.cs" />
     <Compile Include="DataAccessLayer\EntityFramework\EFUserDal.cs" />
     <Compile Include="EntityLayer\Concrete\Comment.cs" />
     <Compile Include="EntityLayer\Concrete\Genre.cs" />
     <Compile Include="EntityLayer\Concrete\Movie.cs" />
+    <Compile Include="EntityLayer\Concrete\Rating.cs" />
     <Compile Include="EntityLayer\Concrete\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -199,6 +207,18 @@
     <Compile Include="Migrations\202306132104402_mig6.cs" />
     <Compile Include="Migrations\202306132104402_mig6.designer.cs">
       <DependentUpon>202306132104402_mig6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306172127498_mig7.cs" />
+    <Compile Include="Migrations\202306172127498_mig7.designer.cs">
+      <DependentUpon>202306172127498_mig7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306182138403_mig8.cs" />
+    <Compile Include="Migrations\202306182138403_mig8.designer.cs">
+      <DependentUpon>202306182138403_mig8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306182221267_mig9.cs" />
+    <Compile Include="Migrations\202306182221267_mig9.designer.cs">
+      <DependentUpon>202306182221267_mig9.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2469,11 +2489,18 @@
     <Content Include="Views\AdminMovie\GetMovieByGenreId.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\SignUp.cshtml" />
+    <Content Include="Views\Comment\Index.cshtml" />
+    <Content Include="Views\AdminUser\UpdateUser.cshtml" />
+    <Content Include="Views\AdminMovie\NewReleasedMovies.cshtml" />
+    <Content Include="Views\AdminMovie\Search.cshtml" />
+    <Content Include="Views\AdminMovie\MostRatedMovies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Movie\" />
+    <Folder Include="Views\Rating\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -2533,6 +2560,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306132104402_mig6.resx">
       <DependentUpon>202306132104402_mig6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306172127498_mig7.resx">
+      <DependentUpon>202306172127498_mig7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306182138403_mig8.resx">
+      <DependentUpon>202306182138403_mig8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306182221267_mig9.resx">
+      <DependentUpon>202306182221267_mig9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

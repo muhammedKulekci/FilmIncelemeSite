@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int i = 0;
 }
 
 <br />
@@ -20,8 +21,9 @@
     </tr>
     @foreach (var item in Model)
     {
+        i++;
         <tr>
-            <th>@item.GenreId</th>
+            <th>@i</th>
             <td>@item.GenreName</td>
             @if (User.IsInRole("A"))
             {

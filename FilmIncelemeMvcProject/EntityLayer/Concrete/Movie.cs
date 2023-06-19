@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilmIncelemeMvcProject.EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -19,18 +20,18 @@ namespace EntityLayer.Concrete
         [StringLength(1000)]
         public string Image { get; set; }
         [StringLength(1000)]
-        public string Trailer { get; set; }        
+        public string Trailer { get; set; }
         public int Year { get; set; }
+        public int Duration { get; set; }
+        public decimal AverageRating { get; set; }
         [StringLength(1000)]
         public string Description { get; set; }
-        public bool IsStatus { get; set; } =true;
+        public bool IsStatus { get; set; } = true;
         public bool IsDelete { get; set; }
         public int? GenreId { get; set; }
         public virtual Genre Genre { get; set; }
         public ICollection<Comment> Comments { get; set; }
-
-
-
+        public ICollection<Rating> Ratings { get; set; } = new List<Rating>(); 
 
     }
 }

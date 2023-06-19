@@ -35,6 +35,8 @@ namespace FilmIncelemeMvcProject.BusinessLayer.Concrete
 
         public void MovieAdd(Movie movie)
         {
+            movie.IsStatus = true;
+            movie.IsDelete = false;
             _movieDal.Insert(movie);
         }
 

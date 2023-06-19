@@ -40,15 +40,18 @@
 
 
                         <div class="card-footer">
-                            <div class="text-right">
-                                <a href="/AdminMovie/UpdateMovie/@item.MovieId" class="btn btn-sm btn-warning">
-                                    Edit
-                                </a>
+                            @if (User.IsInRole("A"))
+                            {
+                                <div class="text-right">
+                                    <a href="/AdminMovie/UpdateMovie/@item.MovieId" class="btn btn-sm btn-warning">
+                                        Edit
+                                    </a>
 
-                                <a href="/AdminMovie/DeleteMovie/@item.MovieId" class="btn btn-sm btn-danger">
-                                    Delete
-                                </a>
-                            </div>
+                                    <a href="/AdminMovie/DeleteMovie/@item.MovieId" class="btn btn-sm btn-danger">
+                                        Delete
+                                    </a>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>

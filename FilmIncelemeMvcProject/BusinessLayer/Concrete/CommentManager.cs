@@ -45,7 +45,7 @@ namespace FilmIncelemeMvcProject.BusinessLayer.Concrete
 
         public List<Comment> GetListByMovieId(int id)
         {
-            return _commentDal.List(x => x.MovieId == id);
+            return _commentDal.List(x => x.MovieId == id && x.IsStatus == true);
         }
     }
 }

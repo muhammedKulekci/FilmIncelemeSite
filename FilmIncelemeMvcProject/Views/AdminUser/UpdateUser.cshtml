@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.User
+@{
+    ViewBag.Title = "UpdateUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>User Information</h2>
+
+<img src="@Model.Image" style="width:200px;" />
+
+@using (Html.BeginForm("UpdateUser", "AdminUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+
+        @Html.HiddenFor(x => x.UserId, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.Role, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.IsStatus, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.Ratings, new { @class = "form-control" })
+        <label for="NameSurname" class="form-label">Name Surname</label>
+        @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+        <label for="Email" class="form-label">E-mail</label>
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        <label for="Password" class="form-label">Password</label>
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        <label for="Image" class="form-label">Image</label>
+        @Html.TextBoxFor(x => x.Image, new { @class = "form-control", @type = "file" })
+        <br />
+
+        <button class="btn btn-success">Save</button>
+    </div>
+}
+

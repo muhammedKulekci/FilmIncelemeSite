@@ -14,11 +14,21 @@ namespace FilmIncelemeMvcProject.Controllers
         MovieManager mm = new MovieManager(new EFMovieDal());
         GenreManager gm = new GenreManager(new EFGenreDal());
         CommentManager cm = new CommentManager(new EFCommentDal());
+        UserManager um = new UserManager(new EFUserDal());
+        RatingManager rm = new RatingManager(new EFRatingDal());
+
         public ActionResult Index()
         {
             var movieValues = mm.GetList();
+
+
             return View(movieValues);
         }
+
+
+
+
+
         [HttpGet]
         public ActionResult AddMovie()
         {
@@ -43,8 +53,12 @@ namespace FilmIncelemeMvcProject.Controllers
         }
         public ActionResult GetMovie(int id)
         {
+            string email = (string)Session["Email"];
+            User userInfo = um.GetByEmail(email);
+            ViewBag.user = userInfo;
+
             var movieValues = mm.GetById(id);
-            var commentValues= cm.GetListByMovieId(id);
+            var commentValues = cm.GetListByMovieId(id);
             ViewBag.movie = movieValues;
             return View(commentValues);
         }
@@ -80,5 +94,29 @@ namespace FilmIncelemeMvcProject.Controllers
             return View(MovieValue);
 
         }
+        public ActionResult NewReleasedMovies()
+        {
+            var movies = mm.GetList().OrderByDescending(m => m.Year).ToList();
+            return View(movies);
+        }
+        public ActionResult Search(string query)
+        {
+            query = query.ToLower();
+
+            var movies = mm.GetList()
+                .Where(m => m.MovieName.ToLower().Contains(query)
+                    || m.Writer.ToLower().Contains(query)
+                    || m.Director.ToLower().Contains(query))
+                .ToList();
+
+            return View(movies);
+        }
+        public ActionResult MostRatedMovies()
+        {
+            var movies = mm.GetList().OrderByDescending(m => m.AverageRating).ToList();
+            return View(movies);
+        }
+
+
     }
 }

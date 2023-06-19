@@ -10,9 +10,12 @@
 <br />
 @using (Html.BeginForm("UpdateMovie", "AdminMovie", FormMethod.Post))
 {
+    
     <div class="form-group">
-        <label for="MovieId" class="form-label">Movie ID</label>
-        @Html.TextBoxFor(x => x.MovieId, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.MovieId)
+        @Html.HiddenFor(x => x.IsDelete)
+        @Html.HiddenFor(x => x.AverageRating)
+
         <label for="MovieName" class="form-label">Movie Name</label>
         @Html.TextBoxFor(x => x.MovieName, new { @class = "form-control" })
         <br />
@@ -22,14 +25,14 @@
         @Html.TextBoxFor(x => x.Writer, new { @class = "form-control" })
         <label for="Year" class="form-label">Year</label>
         @Html.TextBoxFor(x => x.Year, new { @class = "form-control" })
+        <label for="Duration" class="form-label">Duration</label>
+        @Html.TextBoxFor(x => x.Duration, new { @class = "form-control" })
         <label for="Description" class="form-label">Description</label>
         @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
         <label for="Image" class="form-label">İmage</label>
         @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
         <label for="Trailer" class="form-label">Trailer</label>
         @Html.TextBoxFor(x => x.Trailer, new { @class = "form-control" })
-        <label for="IsDelete" class="form-label">IsDelete</label>
-        @Html.TextBoxFor(x => x.IsDelete, new { @class = "form-control" })
         <label for="IsStatus" class="form-label">IsStatus</label>
         @Html.TextBoxFor(x => x.IsStatus, new { @class = "form-control" })
 

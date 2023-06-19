@@ -3,8 +3,22 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    
+    
 }
 
+<!-- Diğer HTML kodları -->
+
+
+@if (User.IsInRole("A"))
+{
+    <a href="/AdminMovie/AddMovie/" class="btn btn-info">Film Ekle</a>
+}
+<br />
+<br />
+<h2>Movies</h2>
+<br />
+<br />
 <div class="card card-solid">
     <div class="card-body pb-0">
         <div class="row">
@@ -27,6 +41,14 @@
                                         <li class="small"><span class="fa-li"></span> Writer: @item.Writer</li>
                                         <li class="small"><span class="fa-li"></span> Director: @item.Director</li>
                                         <li class="small"><span class="fa-li"></span> Year: @item.Year</li>
+                                        <li class="small"><span class="fa-li"></span> Rating: @item.AverageRating</li>
+                                        <li class="small"><span class="fa-li"></span> Duration: @item.Duration</li>
+                                       
+
+
+
+
+
 
                                     </ul>
                                 </div>
@@ -59,9 +81,7 @@
             }
 
         </div>
-        @if (User.IsInRole("A")) {
-    <a href="/AdminMovie/AddMovie/" class="btn btn-info">Film Ekle</a>
-        }
+
     </div>
 </div>
 

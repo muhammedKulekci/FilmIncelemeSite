@@ -1,4 +1,5 @@
 ﻿using EntityLayer.Concrete;
+using FilmIncelemeMvcProject.EntityLayer.Concrete;
 using System.Data.Entity;
 
 namespace FilmIncelemeMvcProject.DataAccessLayer.Concrete
@@ -9,6 +10,7 @@ namespace FilmIncelemeMvcProject.DataAccessLayer.Concrete
         public DbSet<User> Users { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
         
 
 

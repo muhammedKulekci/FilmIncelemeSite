@@ -17,6 +17,11 @@ namespace FilmIncelemeMvcProject.BusinessLayer.Concrete
             _UserDal = userDal;
         }
 
+        public User GetByEmail(string email)
+        {
+            return _UserDal.Get(x => x.Email == email);
+        }
+
         public User GetById(int id)
         {
             return _UserDal.Get(x=>x.UserId == id);

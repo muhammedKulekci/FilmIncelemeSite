@@ -1,0 +1,76 @@
+﻿@using EntityLayer.Concrete
+@model List<Movie>
+@{
+    ViewBag.Title = "MostRatedMovies";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@if (User.IsInRole("A"))
+{
+    <a href="/AdminMovie/AddMovie/" class="btn btn-info">Film Ekle</a>
+}
+<br />
+<br />
+<h2>Most Rated Movies</h2>
+<br />
+<br />
+<div class="card card-solid">
+    <div class="card-body pb-0">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-12 col-sm-6 col-md-4  align-items-stretch">
+                    <div class="card bg-light">
+                        <div class="card-header text-muted border-bottom-0">
+                            @item.Genre.GenreName
+                        </div>
+
+                        <div class="card-body pt-0">
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="/AdminMovie/GetMovie/@item.MovieId"><h2 class="lead"><b> @item.MovieName</b></h2></a>
+
+
+                                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                                        <li class="small"><span class="fa-li"></span> Writer: @item.Writer</li>
+                                        <li class="small"><span class="fa-li"></span> Director: @item.Director</li>
+                                        <li class="small"><span class="fa-li"></span> Year: @item.Year</li>
+                                        <li class="small"><span class="fa-li"></span> Rating: @item.AverageRating</li>
+                                        <li class="small"><span class="fa-li"></span> Duration: @item.Duration</li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <a href="/AdminMovie/GetMovie/@item.MovieId"><img src="@item.Image" alt="" class="img img-fluid" style="height:300px;"></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="card-footer">
+                            <div class="text-right">
+                                @if (User.IsInRole("A"))
+                                {
+                                    <a href="/AdminMovie/UpdateMovie/@item.MovieId" class="btn btn-sm btn-warning">
+                                        Edit
+                                    </a>
+
+                                    <a href="/AdminMovie/DeleteMovie/@item.MovieId" class="btn btn-sm btn-danger">
+                                        Delete
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+</div>
+
