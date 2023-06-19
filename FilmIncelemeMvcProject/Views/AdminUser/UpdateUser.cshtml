@@ -18,12 +18,20 @@
         @Html.HiddenFor(x => x.Ratings, new { @class = "form-control" })
         <label for="NameSurname" class="form-label">Name Surname</label>
         @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.NameSurname))</span>
+        <br />
         <label for="Email" class="form-label">E-mail</label>
         @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Email))</span>
+        <br />
         <label for="Password" class="form-label">Password</label>
         @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Password))</span>
+        <br />
         <label for="Image" class="form-label">Image</label>
         @Html.TextBoxFor(x => x.Image, new { @class = "form-control", @type = "file" })
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Image))</span>
+        <br />
         <br />
 
         <button class="btn btn-success">Save</button>

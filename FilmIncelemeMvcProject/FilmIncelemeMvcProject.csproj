@@ -137,46 +137,62 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BusinessLayer\Abstarct\ICommentService.cs" />
+    <Compile Include="BusinessLayer\Abstarct\IFavoritesService.cs" />
     <Compile Include="BusinessLayer\Abstarct\IGenreService.cs" />
     <Compile Include="BusinessLayer\Abstarct\IMovieService.cs" />
     <Compile Include="BusinessLayer\Abstarct\IRatingService.cs" />
     <Compile Include="BusinessLayer\Abstarct\IUserService.cs" />
+    <Compile Include="BusinessLayer\Abstarct\IWishListService.cs" />
     <Compile Include="BusinessLayer\Concrete\CommentManager.cs" />
+    <Compile Include="BusinessLayer\Concrete\FavoritesManager.cs" />
     <Compile Include="BusinessLayer\Concrete\GenreManager.cs" />
     <Compile Include="BusinessLayer\Concrete\MovieManager.cs" />
     <Compile Include="BusinessLayer\Concrete\RatingManager.cs" />
     <Compile Include="BusinessLayer\Concrete\UserManager.cs" />
+    <Compile Include="BusinessLayer\Concrete\WishListManager.cs" />
     <Compile Include="BusinessLayer\ValidationRules\GenreValidator.cs" />
+    <Compile Include="BusinessLayer\ValidationRules\MovieValidator.cs" />
+    <Compile Include="BusinessLayer\ValidationRules\UserValidator.cs" />
     <Compile Include="Controllers\AdminGenreController.cs" />
     <Compile Include="Controllers\AdminMovieController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\FavoritesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RatingController.cs" />
+    <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="DataAccessLayer\Abstract\ICommentDal.cs" />
+    <Compile Include="DataAccessLayer\Abstract\IFavoritesDal.cs" />
     <Compile Include="DataAccessLayer\Abstract\IGenreDal.cs" />
     <Compile Include="DataAccessLayer\Abstract\IMovieDal.cs" />
     <Compile Include="DataAccessLayer\Abstract\IRatingDal.cs" />
     <Compile Include="DataAccessLayer\Abstract\IRepository.cs" />
     <Compile Include="DataAccessLayer\Abstract\IUserDal.cs" />
+    <Compile Include="DataAccessLayer\Abstract\IWishListDal.cs" />
     <Compile Include="DataAccessLayer\Concrete\Context.cs" />
     <Compile Include="DataAccessLayer\Concrete\Repositories\CommentRepository.cs" />
+    <Compile Include="DataAccessLayer\Concrete\Repositories\FavoritesRepository.cs" />
     <Compile Include="DataAccessLayer\Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="DataAccessLayer\Concrete\Repositories\GenreRepository.cs" />
     <Compile Include="DataAccessLayer\Concrete\Repositories\MovieRepository.cs" />
     <Compile Include="DataAccessLayer\Concrete\Repositories\RatingRepository.cs" />
     <Compile Include="DataAccessLayer\Concrete\Repositories\UserRepository.cs" />
+    <Compile Include="DataAccessLayer\Concrete\Repositories\WishListRepository.cs" />
     <Compile Include="DataAccessLayer\EntityFramework\EFCommentDal.cs" />
+    <Compile Include="DataAccessLayer\EntityFramework\EFFavoritesDal.cs" />
     <Compile Include="DataAccessLayer\EntityFramework\EFGenreDal.cs" />
     <Compile Include="DataAccessLayer\EntityFramework\EFMovieDal.cs" />
     <Compile Include="DataAccessLayer\EntityFramework\EFRatingDal.cs" />
     <Compile Include="DataAccessLayer\EntityFramework\EFUserDal.cs" />
+    <Compile Include="DataAccessLayer\EntityFramework\EFWishListDal.cs" />
     <Compile Include="EntityLayer\Concrete\Comment.cs" />
+    <Compile Include="EntityLayer\Concrete\Favorites.cs" />
     <Compile Include="EntityLayer\Concrete\Genre.cs" />
     <Compile Include="EntityLayer\Concrete\Movie.cs" />
     <Compile Include="EntityLayer\Concrete\Rating.cs" />
     <Compile Include="EntityLayer\Concrete\User.cs" />
+    <Compile Include="EntityLayer\Concrete\WishList.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,6 +235,14 @@
     <Compile Include="Migrations\202306182221267_mig9.cs" />
     <Compile Include="Migrations\202306182221267_mig9.designer.cs">
       <DependentUpon>202306182221267_mig9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306191957263_mig10.cs" />
+    <Compile Include="Migrations\202306191957263_mig10.designer.cs">
+      <DependentUpon>202306191957263_mig10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306192107148_mig11.cs" />
+    <Compile Include="Migrations\202306192107148_mig11.designer.cs">
+      <DependentUpon>202306192107148_mig11.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2494,6 +2518,8 @@
     <Content Include="Views\AdminMovie\NewReleasedMovies.cshtml" />
     <Content Include="Views\AdminMovie\Search.cshtml" />
     <Content Include="Views\AdminMovie\MostRatedMovies.cshtml" />
+    <Content Include="Views\Favorites\Index.cshtml" />
+    <Content Include="Views\WishList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2569,6 +2595,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306182221267_mig9.resx">
       <DependentUpon>202306182221267_mig9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306191957263_mig10.resx">
+      <DependentUpon>202306191957263_mig10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306192107148_mig11.resx">
+      <DependentUpon>202306192107148_mig11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

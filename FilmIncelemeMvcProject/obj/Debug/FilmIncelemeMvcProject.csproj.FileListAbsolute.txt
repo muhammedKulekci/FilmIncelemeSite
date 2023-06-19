@@ -98,3 +98,5 @@ C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\D
 C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\Debug\FilmIncelemeMvcProject.Migrations.mig7.resources
 C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\Debug\FilmIncelemeMvcProject.Migrations.mig8.resources
 C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\Debug\FilmIncelemeMvcProject.Migrations.mig9.resources
+C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\Debug\FilmIncelemeMvcProject.Migrations.mig10.resources
+C:\Users\muham\OneDrive\Masaüstü\FilmIncelemeSite\FilmIncelemeMvcProject\obj\Debug\FilmIncelemeMvcProject.Migrations.mig11.resources

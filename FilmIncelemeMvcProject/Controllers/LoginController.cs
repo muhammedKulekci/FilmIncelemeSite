@@ -1,6 +1,8 @@
 ﻿using EntityLayer.Concrete;
 using FilmIncelemeMvcProject.BusinessLayer.Concrete;
+using FilmIncelemeMvcProject.BusinessLayer.ValidationRules;
 using FilmIncelemeMvcProject.DataAccessLayer.EntityFramework;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,8 +47,23 @@ namespace FilmIncelemeMvcProject.Controllers
         [HttpPost]
         public ActionResult SignUp(User p)
         {
-            um.UserAdd(p);
-            return RedirectToAction("index");
+            UserValidator userValidator = new UserValidator();
+            ValidationResult result = userValidator.Validate(p);
+            if (result.IsValid)
+            {
+                um.UserAdd(p);
+                return RedirectToAction("index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+
+                }
+            }
+            return View();
+
         }
         public ActionResult Logout()
         {

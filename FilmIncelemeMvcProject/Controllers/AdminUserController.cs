@@ -65,13 +65,6 @@ namespace FilmIncelemeMvcProject.Controllers
             return View(p);
         }
 
-
     }
-
-
-
-
-
-
 
 }

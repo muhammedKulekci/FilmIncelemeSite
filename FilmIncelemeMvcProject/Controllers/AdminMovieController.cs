@@ -1,6 +1,8 @@
 ﻿using EntityLayer.Concrete;
 using FilmIncelemeMvcProject.BusinessLayer.Concrete;
+using FilmIncelemeMvcProject.BusinessLayer.ValidationRules;
 using FilmIncelemeMvcProject.DataAccessLayer.EntityFramework;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,25 +34,48 @@ namespace FilmIncelemeMvcProject.Controllers
         [HttpGet]
         public ActionResult AddMovie()
         {
+            
             List<SelectListItem> valuegenre = (from x in gm.GetList()
                                                select new SelectListItem
                                                {
                                                    Text = x.GenreName,
                                                    Value = x.GenreId.ToString(),
                                                }).ToList();
+
             ViewBag.vlg = valuegenre;
             return View();
         }
         [HttpPost]
         public ActionResult AddMovie(Movie p)
         {
-            mm.MovieAdd(p);
-            return RedirectToAction("index");
-        }
-        public ActionResult MovieByGenre()
-        {
+            List<SelectListItem> valuegenre = (from x in gm.GetList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.GenreName,
+                                                   Value = x.GenreId.ToString(),
+                                               }).ToList();
+
+            ViewBag.vlg = valuegenre;
+
+            MovieValidator movieValidator = new MovieValidator();
+            ValidationResult result = movieValidator.Validate(p);
+            if (result.IsValid)
+            {
+                mm.MovieAdd(p);
+                return RedirectToAction("index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+
+                }
+            }
             return View();
+
         }
+        
         public ActionResult GetMovie(int id)
         {
             string email = (string)Session["Email"];
@@ -85,8 +110,31 @@ namespace FilmIncelemeMvcProject.Controllers
         [HttpPost]
         public ActionResult UpdateMovie(Movie p)
         {
-            mm.MovieUpdate(p);
-            return RedirectToAction("index");
+            List<SelectListItem> valuegenre = (from x in gm.GetList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.GenreName,
+                                                   Value = x.GenreId.ToString(),
+                                               }).ToList();
+            ViewBag.vlg = valuegenre;
+
+            MovieValidator movieValidator = new MovieValidator();
+            ValidationResult result = movieValidator.Validate(p);
+            if (result.IsValid)
+            {
+                mm.MovieUpdate(p);
+                return RedirectToAction("index");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+
+                }
+            }
+            return View();
+
         }
         public ActionResult GetMovieByGenreId(int id)
         {

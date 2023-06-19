@@ -11,23 +11,44 @@
 @using (Html.BeginForm("AddMovie", "AdminMovie", FormMethod.Post))
 {
     <div class="form-group">
-        <label for="GenreName" class="form-label">Movie Name</label>
+        <label for="MovieName" class="form-label">Movie Name</label>
         <input type="text" class="form-control" id="MovieName" name="MovieName">
-        <label for="GenreName" class="form-label">Director</label>
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.MovieName))</span>
+        <br />
+        <label for="Director" class="form-label">Director</label>
         <input type="text" class="form-control" id="Director" name="Director">
-        <label for="GenreName" class="form-label">Writer</label>
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Director))</span>
+        <br />
+
+        <label for="Writer" class="form-label">Writer</label>
         <input type="text" class="form-control" id="Writer" name="Writer">
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Writer))</span>
+        <br />
+
         <label for="GenreName" class="form-label">Year</label>
         <input type="number" class="form-control" id="Year" name="Year">
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Year))</span>
+        <br />
+
         <label for="GenreName" class="form-label">Description</label>
         <input type="text" class="form-control" id="Description" name="Description">
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Description))</span>
+        <br />
+
         <label for="Duration" class="form-label">Duration</label>
-        <input type="text" class="form-control" id="Duration" name="Duration">
+        <input type="number" class="form-control" id="Duration" name="Duration">
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Duration))</span>
+        <br />
 
         <label for="Image" class="form-label">İmage</label>
         <input type="text" class="form-control" id="Image" name="Image">
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Image))</span>
+        <br />
+
         <label for="Trailer" class="form-label">Trailer</label>
         <input type="text" class="form-control" id="Trailer" name="Trailer">
+        <span class="text-danger">@(Html.ValidationMessageFor(x => x.Trailer))</span>
+        <br />
 
         <label for="GenreName" class="form-label">Genre</label>
         @Html.DropDownListFor(x => x.GenreId, (List<SelectListItem>)ViewBag.vlg, new { @class = "form-control" })

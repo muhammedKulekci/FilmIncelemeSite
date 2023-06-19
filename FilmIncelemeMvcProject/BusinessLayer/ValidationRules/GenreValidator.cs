@@ -11,8 +11,8 @@ namespace FilmIncelemeMvcProject.BusinessLayer.ValidationRules
     {
         public GenreValidator() 
         {
-            RuleFor(x=>x.GenreName).NotEmpty().WithMessage("Kategori Adını Boş Geçmeyiniz");
-            RuleFor(x => x.GenreName).MaximumLength(50).WithMessage("Kategori Adı 50 Karakterden Uzun Olamaz");
+            RuleFor(x=>x.GenreName).NotEmpty().WithMessage("Do not leave the name of the category blank");
+            RuleFor(x => x.GenreName).MaximumLength(50).WithMessage("Category Name Cannot Be Longer Than 50 Characters");
         
         }    
     }

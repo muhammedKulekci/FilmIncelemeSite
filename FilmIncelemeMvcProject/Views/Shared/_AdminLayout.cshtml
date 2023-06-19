@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>AdminLTE 3 | Dashboard 3</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
 </head>
@@ -44,17 +45,17 @@ to get the desired effect
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
                     <div class="info">
-                        <a href="/AdminUser/UpdateUser/" class="d-block">@User.Identity.Name</a>
+                        <a href="/AdminUser/UpdateUser/" class="d-block"><ion-icon name="person-sharp"></ion-icon> @User.Identity.Name</a>
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
 
                         <li class="nav-item ">
-                            
+
                             <form action="/AdminMovie/Search" method="GET">
                                 <input class="search_input" type="text" name="query" placeholder="Search Movie" oninput="convertToLowercase(this)">
                                 <button type="submit" class="search_icon"><i class="fas fa-search"></i></button>
@@ -64,7 +65,7 @@ to get the desired effect
 
                         <li class="nav-item ">
                             <a href="/AdminGenre/index/" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <ion-icon name="apps-sharp"></ion-icon>
                                 <p>
                                     Categories
                                 </p>
@@ -75,7 +76,7 @@ to get the desired effect
                         {
                             <li class="nav-item">
                                 <a href="/AdminUser/index/" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
+                                    <ion-icon name="people-sharp"></ion-icon>
                                     <p>
                                         Users
                                     </p>
@@ -84,7 +85,7 @@ to get the desired effect
                         }
                         <li class="nav-item ">
                             <a href="/AdminMovie/index/" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                                <ion-icon name="film-sharp"></ion-icon>
                                 <p>
                                     Movies
                                 </p>
@@ -93,27 +94,45 @@ to get the desired effect
 
                         <li class="nav-item has-treeview">
                             <a href="/AdminMovie/NewReleasedMovies/" class="nav-link">
-                                <i class="nav-icon fas fa-tree"></i>
+                                <ion-icon name="flame-sharp"></ion-icon>
                                 <p>
                                     Newly Released Movies
                                 </p>
                             </a>
                         </li>
 
-                         <li class="nav-item has-treeview">
+                        <li class="nav-item has-treeview">
                             <a href="/AdminMovie/MostRatedMovies/" class="nav-link">
-                                <i class="nav-icon fas fa-tree"></i>
+                                <ion-icon name="funnel-sharp"></ion-icon>
                                 <p>
                                     Most Ratings
                                 </p>
                             </a>
                         </li>
-                        
+
+                        <li class="nav-item has-treeview">
+                            <a href="/Favorites/index/" class="nav-link">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                                <p>
+                                    Favorites
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item has-treeview">
+                            <a href="/WishList/index/" class="nav-link">
+                                <ion-icon name="albums-sharp"></ion-icon>
+                                <p>
+                                    Wish List
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-item has-treeview">
                             <a href="/Login/Logout/" class="nav-link">
-                                <i class="nav-icon fas fa-apple-alt"></i>
+                                <ion-icon name="exit-sharp"></ion-icon>
                                 <p>
-                                    Çıkış yap
+                                    Exit
                                 </p>
                             </a>
 
@@ -157,6 +176,8 @@ to get the desired effect
             input.value = input.value.toLowerCase();
         }
     </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>

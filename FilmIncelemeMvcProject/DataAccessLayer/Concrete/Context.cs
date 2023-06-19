@@ -11,6 +11,8 @@ namespace FilmIncelemeMvcProject.DataAccessLayer.Concrete
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Favorites> Favorites { get; set; }
+        public DbSet<WishList> WishLists { get; set; }
         
 
 

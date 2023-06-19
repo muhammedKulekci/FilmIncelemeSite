@@ -23,6 +23,13 @@
                     <div class="card bg-light">
                         <div class="card-header text-muted border-bottom-0">
                             @item.Genre.GenreName
+                            <a href="@Url.Action("AddToWishList", "WishList", new { movieId = item.MovieId })" title="Add to Wish List" style="position: absolute; top: 10px; right: 10px; color: dimgrey;">
+                                <ion-icon name="bookmark-sharp"></ion-icon>
+                            </a>
+
+                            <a href="@Url.Action("AddToFavorites", "Favorites", new { movieId = item.MovieId })" title="Add to Favorites" style="position: absolute; top: 10px; right: 35px; color: dimgrey;">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                            </a>
                         </div>
 
                         <div class="card-body pt-0">

@@ -28,6 +28,15 @@
                     <div class="card bg-light">
                         <div class="card-header text-muted border-bottom-0">
                             @item.Genre.GenreName
+                            <a href="@Url.Action("AddToWishList", "WishList", new { movieId = item.MovieId })" title="Add to Wish List" style="position: absolute; top: 10px; right: 10px; color: dimgrey;">
+                                <ion-icon name="bookmark-sharp"></ion-icon>
+                            </a>
+                            
+                            <a href="@Url.Action("AddToFavorites", "Favorites", new { movieId = item.MovieId })" title="Add to Favorites" style="position: absolute; top: 10px; right: 35px; color: dimgrey;">
+                                <ion-icon name="heart-sharp"></ion-icon>
+                            </a>
+
+
                         </div>
 
                         <div class="card-body pt-0">
@@ -43,7 +52,7 @@
                                         <li class="small"><span class="fa-li"></span> Year: @item.Year</li>
                                         <li class="small"><span class="fa-li"></span> Rating: @item.AverageRating</li>
                                         <li class="small"><span class="fa-li"></span> Duration: @item.Duration</li>
-                                       
+
 
 
 
@@ -53,9 +62,12 @@
                                     </ul>
                                 </div>
                                 <div class="col-6 text-center">
-                                    <a href="/AdminMovie/GetMovie/@item.MovieId"><img src="@item.Image" alt="" class="img img-fluid" style="height:300px;"></a>
-
+                                    <a href="/AdminMovie/GetMovie/@item.MovieId">
+                                        <img src="@item.Image" alt="" class="img img-fluid" style="height:300px;">
+                                        
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
 

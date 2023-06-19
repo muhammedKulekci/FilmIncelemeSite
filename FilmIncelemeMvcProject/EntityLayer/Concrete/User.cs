@@ -23,6 +23,8 @@ namespace EntityLayer.Concrete
         public string Role { get; set; } = "B";
         public ICollection<Comment> Comments { get; set; }
         public ICollection<Rating> Ratings { get; set; }
+        public ICollection<Favorites> Favorites { get; set; }
+        public ICollection<WishList> WishLists { get; set; }
         public bool IsStatus { get; set; } = true;
         public bool IsDeleted { get; set; }
 
